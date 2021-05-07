@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>GIT函数组</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGITTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGIT</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZRFC_DEV_REQUEST_IMPORT_GIT</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>读取DEV请求文件到内表</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>REQUESTNO</PARAMETER>
+       <TYP>STRING</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>FILES</PARAMETER>
+       <TYP>ZTS_REQUEST_FILE_GIT</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>REQUESTNOS</PARAMETER>
+       <TYP>STRING</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>REQUESTNO</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>FILES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>PRD 请求文件</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>REQUESTNOS</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZRFC_PRD_REQUEST_EXPROT_GIT</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>导入DEV数据到PRD系统</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>FILES</PARAMETER>
+       <TYP>ZTS_REQUEST_FILE_GIT</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>REQUESTNOS</PARAMETER>
+       <TYP>STRING</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>FILES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>PRD 请求文件</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>REQUESTNOS</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
