@@ -70,6 +70,47 @@
       </RSFDO>
      </DOCUMENTATION>
     </item>
+    <item>
+     <FUNCNAME>ZTEST_GIT</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>测试函数</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>MATNR</PARAMETER>
+       <TYP>MATNR</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>MAKTX</PARAMETER>
+       <TYP>MAKTX</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_MARA</PARAMETER>
+       <DBSTRUCT>MARA</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>MATNR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>物料编号</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MAKTX</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>物料描述</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_MARA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>常规物料数据</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
    </FUNCTIONS>
   </asx:values>
  </asx:abap>

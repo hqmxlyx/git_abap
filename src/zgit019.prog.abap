@@ -958,6 +958,7 @@ IF R8 = 'X'.
 *  IT_BILL_ITEM-REF_ITEM = '000010'."参考单据项目号
 *  IT_BILL_ITEM-PAYER = 'A6581'."付款方
   IT_BILL_ITEM-REF_DOC_CA = 'J'. "先前凭证类别
+*  IT_BILL_ITEM-REF_DOC_CA = 'C'. "先前凭证类别 按销售订单开票
 *  IT_BILL_ITEM-DOC_NUMBER = '0200002616'."销售订单
 *  IT_BILL_ITEM-ITM_NUMBER = '000010'."销售订单行项目
 *  IT_BILL-COSTCENTER = ''."成本中心

@@ -37,36 +37,24 @@ DATA:BEGIN OF IT_TAB OCCURS 0,
        TABASNAME TYPE CHAR30,
      END OF IT_TAB.
 
-DATA:IT_ITEM TYPE STANDARD TABLE OF ACDOCA WITH HEADER LINE.
+DATA:IT_ITEM TYPE STANDARD TABLE OF CAUFV WITH HEADER LINE.
 "---------------------------------------------------------SQL编辑区
-SELECT
-  A~RBUKRS   "公司代码
-  A~GJAHR   "年度
-  A~POPER   "期间
-  A~BELNR   "凭证编号
-  A~BUDAT   "过账日期
-  A~RCNTR   "正刚成本中心
-  B~KTEXT   "正刚成本中心文本
-  A~RFAREA   "功能范围
-  A~RACCT   "正刚会计科目
-  E~TXT20   "正刚科目描述
-  A~KSL   "金额
-  A~RHCUR   "货币
-  A~MATNR   "物料
-  A~MSL   "数量
-  A~RUNIT   "单位
-  A~SGTXT   "凭证文本
-  A~VRGNG   "业务事务
-  A~DOCLN  "行项目
-  A~CO_BELNR   "CO凭证号
-  A~CO_BUZEI   "CO凭证行项目
-  A~CO_BELKZ   "CO借贷标识
-  D~TXZ01 "采购订单文本
-  INTO CORRESPONDING FIELDS OF TABLE IT_ITEM FROM ACDOCA AS A
-  LEFT JOIN CSKT AS B ON A~RCNTR = B~KOSTL AND B~KOKRS = 'KUSC' AND B~SPRAS = SY-LANGU
-  LEFT JOIN MAKT AS C ON A~MATNR = C~MATNR AND C~SPRAS = SY-LANGU
-  LEFT JOIN EKPO AS D ON A~EBELN = D~EBELN AND A~EBELP = D~EBELP
-  LEFT JOIN SKAT AS E ON A~RACCT = E~SAKNR AND E~SPRAS = SY-LANGU AND E~KTOPL = 'KUSA'.
+SELECT A~WERKS
+       A~MATNR
+       E~MAKTX
+       A~CHARG "批次
+       B~ZUSCH "批次状态码
+       A~LGORT "库位
+       B~VFDAT "货架受命到期日
+       B~QNDAT "下一次检验
+       C~HSDAT "生产日期
+       D~MHDRZ "最小货架受命
+       D~MHDHB "总货架受命
+ INTO CORRESPONDING FIELDS OF TABLE IT_ITEM FROM MCHB AS A
+ INNER JOIN MCH1 AS B ON A~MATNR = B~MATNR AND A~CHARG = B~CHARG
+ INNER JOIN MCHA AS C ON A~MATNR = C~MATNR AND A~WERKS = C~WERKS AND A~CHARG = C~CHARG
+ INNER JOIN mara as d on a~MATNR = D~matnr
+ LEFT JOIN makt as e on  d~matnr = E~MATNR.
 
 
 "---------------------------------------------------------SQL编辑区
